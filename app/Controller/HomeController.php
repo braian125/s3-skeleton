@@ -1,11 +1,13 @@
 <?php
 namespace App\Controller;
+use Slim\Views\Twig as View;
 
-
-class HomeController
+class HomeController extends Controller
 {
-	public function index()
+	
+	public function index($request, $response)
 	{
-		return "Hello s3 skeleton";
+
+		return $this->view->render($response, 'home.twig');		
 	}
 }

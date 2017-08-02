@@ -1,2 +1,5 @@
 <?php
-$app->get('/', 'App\Controller\HomeController:index');
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
+
+$app->get('/', 'HomeController:index');

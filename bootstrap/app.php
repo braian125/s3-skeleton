@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new Slim\App([
@@ -7,14 +8,23 @@ $app = new Slim\App([
     ]
 ]);
 $container = $app->getContainer();
+
 // Twig
-$container['view'] = function ($c) {
-    $settings = $c->get('settings');
-    $view = new Slim\Views\Twig($settings['view']['template_path'], $settings['view']['twig']);
-    // Add extensions
-    $view->addExtension(new Slim\Views\TwigExtension($c->get('router'), $c->get('request')->getUri()));
-    $view->addExtension(new Twig_Extension_Debug());
-    return $view;
+$container['view'] = function ($container) {
+	$view = new Slim\Views\Twig(__DIR__ . '/../resources/views', [
+		'cache' => false,
+	]);
+
+	$view->addExtension( new \Slim\Views\TwigExtension(
+		$container->router,
+		$container->request->getUri()
+	));
+
+	return $view;
+};
+
+$container['HomeController'] = function($container){
+	return new \App\Controller\HomeController($container);
 };
 
 
