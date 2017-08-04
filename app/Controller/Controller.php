@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Controller;
-
 
 class Controller
 {
@@ -15,12 +13,9 @@ class Controller
 
 
 	public function __get($property)
-	{
-		//var_dump($property);
+	{		
 		if($this->container->{$property}){
 			return $this->container->{$property};
 		}
 	}
 }
-
-
