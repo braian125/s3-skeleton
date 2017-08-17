@@ -42,6 +42,7 @@ $container['view'] = function ($container) {
 		$basePath,
 		$container->request->getUri()
 	));
+	$view->addExtension(new \Twig_Extension_Debug());
 	$view['baseUrl'] = $basePath;
 	return $view;
 };
