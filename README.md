@@ -2,3 +2,5 @@
 
 
 Proyecto para construcción de mini sitios de forma rápida y sencilla
+
+Sólo PHP > 7
