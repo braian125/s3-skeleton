@@ -3,7 +3,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [QSA,L]
 
-<FilesMatch "(?i)^.*\.(ico|flv|jpg|jpeg|png|gif|js|css)$">
-ExpiresActive On
-ExpiresDefault A2592000
-</FilesMatch>
+#<FilesMatch "(?i)^.*\.(ico|flv|jpg|jpeg|png|gif|js|css)$">
+#ExpiresActive On
+#ExpiresDefault A2592000
+#</FilesMatch>

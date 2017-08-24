@@ -8,9 +8,9 @@ $app = new Slim\App([
 	    'db' => [
 	    	'driver' => 'mysql',
 	    	'host'	=>	'localhost',
-	    	'database'	=> 'skeleton',
+	    	'database'	=> 's3_skeleton',
 	    	'username'	=> 'root',
-	    	'password'	=> '',
+	    	'password'	=> 'mysql',
 	    	'charset'	=> 'utf8',
 	    	'collation' => 'utf8_unicode_ci',
 	    	'prefix'	=> ''
@@ -53,6 +53,10 @@ $container['HomeController'] = function($container){
 
 $container['AuthController'] = function($container){
 	return new \App\Controller\Auth\AuthController($container);
+};
+
+$container['auth'] = function($container){
+	return new \App\Auth\Auth;
 };
 
 require_once __DIR__ . '/../app/routes.php';
