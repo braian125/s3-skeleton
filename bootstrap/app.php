@@ -29,6 +29,10 @@ $container['db'] = function($container) use($capsule) {
 	return $capsule;
 };
 
+$container['auth'] = function($container){
+	return new \App\Auth\Auth;
+};
+
 // Twig
 $container['view'] = function ($container) {
 	$view = new Slim\Views\Twig(__DIR__ . '/../resources/views', [
@@ -44,6 +48,12 @@ $container['view'] = function ($container) {
 	));
 	$view->addExtension(new \Twig_Extension_Debug());
 	$view['baseUrl'] = $basePath;
+	if(isset($_SESSION['user'])){
+		$view->getEnvironment()->addGlobal('auth', [
+			'check'	=> $container->auth->check(),
+			'user'	=> $container->auth->user(),
+		]);	
+	}	
 	return $view;
 };
 
@@ -55,8 +65,5 @@ $container['AuthController'] = function($container){
 	return new \App\Controller\Auth\AuthController($container);
 };
 
-$container['auth'] = function($container){
-	return new \App\Auth\Auth;
-};
 
 require_once __DIR__ . '/../app/routes.php';
