@@ -1,4 +1,18 @@
 {
+    "name": "s3-skeleton",
+    "description": "Skeleton App for microsites",
+    "keywords": ["skeleton","slim3","slim","framework"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0"        
+    },
+    "authors": [
+        {
+            "name": "Brian Vanegas",
+            "email": "brianvanegas@viajesaeromar.com"
+        }
+    ],
     "require": {
     	"slim/slim": "3.*",
         "slim/twig-view": "*",
