@@ -2,18 +2,21 @@
 session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+$dotenv->load();
+
 $app = new Slim\App([
     'settings' => [
         'displayErrorDetails' => true,
 	    'db' => [
-	    	'driver' => 'mysql',
-	    	'host'	=>	'localhost',
-	    	'database'	=> 's3_skeleton',
-	    	'username'	=> 'root',
-	    	'password'	=> 'mysql',
+	    	'driver' => $_ENV['DB_CONNECTION'],
+	    	'host'	=>	$_ENV['DB_HOST'],
+	    	'database'	=> $_ENV['DB_DATABASE'],
+	    	'username'	=> $_ENV['DB_USERNAME'],
+	    	'password'	=> $_ENV['DB_PASSWORD'],
 	    	'charset'	=> 'utf8',
 	    	'collation' => 'utf8_unicode_ci',
-	    	'prefix'	=> ''
+	    	'prefix'	=> $_ENV['DB_PREFIX']
 	    ]
     ]
 ]);
