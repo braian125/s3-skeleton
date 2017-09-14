@@ -7,7 +7,7 @@ $dotenv->load();
 
 $app = new Slim\App([
     'settings' => [
-        'displayErrorDetails' => true,
+        'displayErrorDetails' => $_ENV['APP_DISPLAYERRORDETAILS'],
 	    'db' => [
 	    	'driver' => $_ENV['DB_CONNECTION'],
 	    	'host'	=>	$_ENV['DB_HOST'],
@@ -39,7 +39,7 @@ $container['auth'] = function($container){
 // Twig
 $container['view'] = function ($container) {
 	$view = new Slim\Views\Twig(__DIR__ . '/../resources/views', [
-		'debug' => true,
+		'debug' => $_ENV['APP_TWIGDEBUG'],
 		'cache' => false,
 	]);
 	$uri = explode("/",$container['request']->getUri());
