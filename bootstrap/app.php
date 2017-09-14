@@ -60,6 +60,14 @@ $container['view'] = function ($container) {
 	return $view;
 };
 
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
+        return $container['view']->render($response->withStatus(404), 'errors/404.twig', [
+            "myMagic" => "Let's roll"
+        ]);
+    };
+};
+
 $container['HomeController'] = function($container){
 	return new \App\Controller\HomeController($container);
 };
