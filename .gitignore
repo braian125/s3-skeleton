@@ -39,3 +39,4 @@ Thumbs.db
 # Folders #
 vendor/
 .env
+node_modules/
