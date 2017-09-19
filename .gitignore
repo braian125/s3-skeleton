@@ -40,3 +40,4 @@ Thumbs.db
 vendor/
 .env
 node_modules/
+.sass-cache/
