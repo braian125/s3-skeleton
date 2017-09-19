@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAC;EACG,SAAS,EAAE,IAAI",
+"sources": ["../../../../resources/assets/sass/other/main.sass"],
+"names": [],
+"file": "main.min.css"
+}
