@@ -5,6 +5,7 @@ module.exports = function (grunt) {
     ' * Version: <%= pkg.version %>\n'+
     ' * Build date: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %>\n'+
     ' */\n';
+    var hashDate = Date.now();
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
       sass: {
@@ -101,6 +102,21 @@ module.exports = function (grunt) {
           ]
         },
       },
+      cache_control: {
+        layout: {
+          source: "resources/views/layout.twig",
+          options: {
+            version: hashDate,
+            links: true,
+            scripts: true,
+            replace: false,
+            ignoreCDN: true,
+            filesToIgnore: [],
+            outputDest: "resources/views/layout.twig",
+            dojoCacheBust: true
+          }
+        }
+      },
       clean: ['public/assets/**/*'],
     });
     grunt.loadNpmTasks('grunt-banner');
@@ -110,6 +126,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-cache-control');
     grunt.registerTask('dev', ['clean', 'copy:dev', 'sass', 'watch']);
-    grunt.registerTask('dist', ['clean', 'sass', 'cssmin', 'uglify']);
+    grunt.registerTask('dist', ['clean', 'sass', 'cssmin', 'uglify', 'cache_control']);
   };
