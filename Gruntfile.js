@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-    // This banner gets inserted at the top of the generated files, such a minified CSS
+    // This banner gets inserted at the top of the generated files
     var bannerContent = '/*!\n' +
     ' * <%= pkg.name %>\n'+
     ' * Version: <%= pkg.version %>\n'+
@@ -57,11 +57,14 @@ module.exports = function (grunt) {
       },
       watch: {
         options: {
-          livereload: true,
+          livereload: {
+            host: 'localhost',
+            port: 8080, // Change this for your port
+          }
         },
         sass: {
           files: ['resources/assets/sass/**/*.sass'],
-          tasks: ['copy:dev', 'sass'],
+          tasks: ['copy:dev', 'sass']
         },
         css: {
           files: ['resources/assets/css/**/*.css'],
@@ -70,6 +73,12 @@ module.exports = function (grunt) {
         js: {
           files: ['resources/assets/js/**/*.js'],
           tasks: ['copy:dev']
+        },
+        twig:{
+          files: ['resources/views/**/*.twig']
+        },
+        app:{
+          files: ['app/**/*.php']
         }
       },
       copy: {
