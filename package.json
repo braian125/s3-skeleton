@@ -1,23 +1,26 @@
 {
-    "name": "SampleGrunt",
-    "version": "0.1.0",
-    "author": "Julian Henao",
-    "private": true,
-    "devDependencies": {
-      "grunt": "~0.4.0",
-      "grunt-banner": "*",
-      "grunt-contrib-htmlmin": "*",
-      "grunt-contrib-cssmin": "*",
-      "grunt-contrib-sass": "*",
-      "grunt-contrib-uglify": "*",
-      "grunt-contrib-watch": "*",
-      "grunt-processhtml": "*",
-      "grunt-contrib-clean": "*",
-      "grunt-contrib-copy": "*",
-      "grunt-file-hash": "*",
-      "grunt-writefile": "*",
-      "grunt-cssc": "*",
-      "grunt-htmlhint": "*",
-      "matchdep": "*"
-    }
+  "name": "SampleGrunt",
+  "version": "0.1.0",
+  "author": "Julian Henao",
+  "private": true,
+  "devDependencies": {
+    "grunt-banner": "*",
+    "grunt-cache-control": "^0.2.5",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-file-hash": "*",
+    "grunt-htmlhint": "*",
+    "grunt-processhtml": "*",
+    "grunt-writefile": "*",
+    "matchdep": "*"
+  },
+  "dependencies": {
+    "grunt": "^0.4.5"
   }
+}
