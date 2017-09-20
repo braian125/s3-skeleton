@@ -1,0 +1,26 @@
+<?php
+namespace App\Controller;
+
+class !nameAction extends Controller
+{
+    public function index($request, $response, $args)  
+    {
+
+    }
+    
+    public function show($request, $response, $args)  
+    {
+
+    }
+
+    public function store($request, $response, $args)  
+    {
+           
+    }
+
+
+    public function update($request, $response, $args)  
+    {
+        
+    }
+}
