@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Commands;
 
 use Symfony\Component\Console\Command\Command;
@@ -52,16 +51,39 @@ class CreateControllerCommand extends Command
             }
         }
 
-        if (!file_exists($directory.ucfirst($name).".php")) {
-            $fh = fopen($directory . ucfirst($name) . ".php", "w");
+        if (!file_exists($directory.ucfirst($name)."Controller.php")) {
+            $fh = fopen($directory . ucfirst($name) . "Controller.php", "w");
             fwrite($fh, $file);
             fclose($fh);
 
+
             $className = ucfirst($name) . "Controller.php";
+
+            $controllers = array_filter(scandir('app/Controller'), function($item) {
+                return !is_dir('app/Controller/' . $item);
+            });
+            $controllers = array_values($controllers);
+            
+            $content = "<?php\r\n";
+            foreach ($controllers as $key => $value) {
+                $name = explode('.', $value);
+                if( $value <> "Controller.php"){
+                    $content .="\r\n";
+                    $content .= '$container["' . $name[0] . '"] = function($container) {';
+                    $content .= "\r\n";
+                    $content .= 'return new \App\Controller\ ' . $name[0] . '(';
+                    $content .= '$container);';
+                    $content .= "\r\n };";
+                }
+            }
+
+            $fp = fopen("bootstrap/CallableControllers.php","wb");
+            fwrite($fp,$content);
+            fclose($fp);
 
             $output->writeln("Created $className in App\\Controller");
         } else {
-            $output->writeln("Class Action already Exists!");
+            $output->writeln("Controller " . $name . " already Exists!");
         }
     }
 }

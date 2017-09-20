@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-class !nameAction extends Controller
+class !name extends Controller
 {
     public function index($request, $response, $args)  
     {

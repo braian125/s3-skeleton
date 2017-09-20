@@ -68,13 +68,18 @@ $container['notFoundHandler'] = function ($container) {
     };
 };
 
-$container['HomeController'] = function($container){
-	return new \App\Controller\HomeController($container);
-};
-
+/**
+ * Special Controllers
+ */
 $container['AuthController'] = function($container){
 	return new \App\Controller\Auth\AuthController($container);
 };
+
+
+/**
+ * Custom Controllers
+ */
+require_once __DIR__ . '/CallableControllers.php';
 
 
 require_once __DIR__ . '/../app/routes.php';
