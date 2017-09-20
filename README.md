@@ -4,7 +4,7 @@ Welcome to S3 Skeleton!
 Install
 -------------
 
-**Using composer**
+**Github**
 >git clone https://github.com/braian125/s3-skeleton.git
 
 <i class="icon-file"></i> Run it
