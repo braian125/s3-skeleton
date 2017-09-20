@@ -50,10 +50,8 @@ Command Line
 >
 >php cli.php create:model yourmodelname
 
-
-
-
-
+About us
+--------
 >**[@braian125](https://twitter.com/braian125)**
 >
 >**[@julianhm9612](https://twitter.com/julianhm9612)**
