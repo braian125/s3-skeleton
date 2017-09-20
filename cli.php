@@ -2,15 +2,19 @@
 require 'vendor/autoload.php';
 
 use App\Commands\CreateControllerCommand;
+use App\Commands\CreateModelCommand;
 use Phpmig\Console\Command;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
+
 $application->add(new CreateControllerCommand());
-/*$application->add(new CreateMiddlewareCommand());
 $application->add(new CreateModelCommand());
+
+/*$application->add(new CreateMiddlewareCommand());
 $application->add(new CreateScaffoldCommand());
 $application->add(new MigrationGeneratorCommand());*/
+
 $application->addCommands(array(
             new Command\InitCommand(),
             new Command\StatusCommand(),
