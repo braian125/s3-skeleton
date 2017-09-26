@@ -1,11 +1,12 @@
 {
-    "name": "s3-skeleton",
+    "name": "gosoft/s3-skeleton",
     "description": "Skeleton App for microsites",
     "keywords": ["skeleton","slim3","slim","framework"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0"        
+        "php": ">=7.0",
+        "another-vendor/package": "1.*"        
     },
     "authors": [
         {
