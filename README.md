@@ -7,6 +7,9 @@ Install
 **Github**
 >git clone https://github.com/braian125/s3-skeleton.git
 
+**Using Composer**
+>composer create-project gosoft/s3-skeleton
+
 <i class="icon-file"></i> Run it
 -------------
 
