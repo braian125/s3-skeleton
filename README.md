@@ -47,11 +47,11 @@ Command Line
 
 >**Create Controller**
 >
->php cli.php create:controller yourcontrollername
+>php skeleton create:controller yourcontrollername
 >
 >**Create Model**
 >
->php cli.php create:model yourmodelname
+>php skeleton create:model yourmodelname
 
 About us
 --------
