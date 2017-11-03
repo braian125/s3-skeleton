@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Auth;
 use App\Models\User;
 
@@ -15,21 +14,18 @@ class Auth
 		return isset($_SESSION['user']);
 	}
 
-
 	public function attempt($email, $password)
 	{
-		$user = User::where('email',$email)->first();		
-
+		$user = User::where('email',$email)->first();
 		if(!$user){
 			return false;
 		}
 
-		if(md5($password) == $user->password){
-			$_SESSION['user'] = $user->id;			
+		if(password_verify($password, $user->password)){
+			$_SESSION['user'] = $user->id;
 			return true;
-		}else
-
-
-		return false;
+		}else{
+			return false;
+		}
 	}
 }
