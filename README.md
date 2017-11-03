@@ -52,6 +52,16 @@ Command Line
 >**Create Model**
 >
 >php skeleton create:model yourmodelname
+>
+>**Create Migration**
+>
+>php skeleton create:migration yourmigrationname
+>
+>php skeleton migrate
+>
+>php skeleton rollback
+
+
 
 About us
 --------
