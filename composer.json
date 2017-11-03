@@ -18,10 +18,9 @@
     	"slim/slim": "3.*",
         "slim/twig-view": "*",
         "slim/flash": "^0.4",
-        "illuminate/database" : "5.4.27",
-        "robmorgan/phinx": "^0.4.4",
-        "vlucas/phpdotenv": "^2.4",
+        "illuminate/database" : "5.4.36",
         "davedevelopment/phpmig": "^1.2",
+        "vlucas/phpdotenv": "^2.4",        
         "symfony/process": "^3.0"
     },
     "autoload": {
