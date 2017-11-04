@@ -3,7 +3,9 @@ use App\Middleware\AuthMiddleware;
 
 $app->group('', function() use ($app) {
 	$app->get('/', 'HomeController:index')->setName('home');
-}); //->add(new AuthMiddleware($container));
+});
 
-$app->get('/auth', 'AuthController:signin')->setName('signin');
-$app->post('/auth', 'AuthController:postSignin');
+$app->group('/auth', function() use ($app) {
+	$app->get('', 'AuthController:signin')->setName('signin');
+	$app->post('', 'AuthController:postSignin');
+})->add($container->get('csrf'));
