@@ -6,10 +6,30 @@ body {
 }
 
 .content{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    text-align: center; */
     text-align: center;
+    margin-top: 40vh;
+}
+.chat{
+    width: 20vw;
+    height: 20vh;
+    position: absolute;
+    margin: 0 auto;
+    /* top: 0; */
+    left: 0;
+    right: 0;
+}
+
+.chat #messages{
+    height: 100%;
+    overflow: auto;
+}
+
+.chat .hidden{
+    display: none
 }
