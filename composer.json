@@ -3,7 +3,7 @@
     "description": "Skeleton App for microsites",
     "keywords": ["skeleton","slim3","slim","framework"],
     "license": "MIT",
-    "type": "project",
+    "type": "project",    
     "authors": [
         {
             "name": "Brian Vanegas",
@@ -17,12 +17,13 @@
     "require": {
     	"slim/slim": "3.*",
         "slim/twig-view": "*",
-        "illuminate/database" : "5.4.27",
-        "robmorgan/phinx": "^0.4.4",
-        "vlucas/phpdotenv": "^2.4",
+        "slim/flash": "^0.4",
+        "slim/csrf": "^0.8.2",
+        "illuminate/database" : "5.4.36",
         "davedevelopment/phpmig": "^1.2",
         "symfony/process": "^3.0",
         "cboden/ratchet": "^0.4.0"
+        "vlucas/phpdotenv": "^2.4",        
     },
     "autoload": {
         "psr-4": {

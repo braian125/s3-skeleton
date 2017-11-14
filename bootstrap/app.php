@@ -36,6 +36,10 @@ $container['auth'] = function($container){
 	return new \App\Auth\Auth;
 };
 
+$container['csrf'] = function ($c) {
+    return new \Slim\Csrf\Guard;
+};
+
 // Twig
 $container['view'] = function ($container) {
 	$view = new Slim\Views\Twig(__DIR__ . '/../resources/views', [
@@ -49,6 +53,7 @@ $container['view'] = function ($container) {
 		$basePath,
 		$container->request->getUri()
 	));
+	$view->addExtension( new App\Views\CsrfExtension($container['csrf']));
 	$view->addExtension(new \Twig_Extension_Debug());
 	$view['baseUrl'] = $basePath;
 	if(isset($_SESSION['user'])){
@@ -74,7 +79,6 @@ $container['notFoundHandler'] = function ($container) {
 $container['AuthController'] = function($container){
 	return new \App\Controller\Auth\AuthController($container);
 };
-
 
 /**
  * Custom Controllers

@@ -47,11 +47,21 @@ Command Line
 
 >**Create Controller**
 >
->php cli.php create:controller yourcontrollername
+>php skeleton create:controller yourcontrollername
 >
 >**Create Model**
 >
->php cli.php create:model yourmodelname
+>php skeleton create:model yourmodelname
+>
+>**Create Migration**
+>
+>php skeleton create:migration yourmigrationname
+>
+>php skeleton migrate
+>
+>php skeleton rollback
+
+
 
 About us
 --------

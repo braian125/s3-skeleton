@@ -1,19 +1,21 @@
+#!/usr/bin/env php
 <?php
 require 'vendor/autoload.php';
 
 use App\Commands\CreateControllerCommand;
 use App\Commands\CreateModelCommand;
+use App\Commands\MigrationGeneratorCommand;
 use Phpmig\Console\Command;
 use Symfony\Component\Console\Application;
 
 $application = new Application();
-
 $application->add(new CreateControllerCommand());
 $application->add(new CreateModelCommand());
-
-/*$application->add(new CreateMiddlewareCommand());
+$application->add(new MigrationGeneratorCommand());
+/*
+$application->add(new CreateMiddlewareCommand());
 $application->add(new CreateScaffoldCommand());
-$application->add(new MigrationGeneratorCommand());*/
+*/
 
 $application->addCommands(array(
             new Command\InitCommand(),
