@@ -22,21 +22,6 @@ RewriteRule ^ index.php [QSA,L]
 	deny from all
 </files>
 
-# X-XSS-Protection
-<IfModule mod_headers.c>
-	Header set X-XSS-Protection "1; mode=block"
-</IfModule>
-
-# X-Frame-Options
-<IfModule mod_headers.c>
-	Header always append X-Frame-Options SAMEORIGIN
-</IfModule>
-
-# X-Content-Type nosniff
-<IfModule mod_headers.c>
-	Header set X-Content-Type-Options nosniff
-</IfModule>
-
 # Extra Security Headers
 <IfModule mod_headers.c>
 	Header set X-XSS-Protection "1; mode=block"
