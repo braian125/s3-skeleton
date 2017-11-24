@@ -2,6 +2,7 @@
 ini_set('session.cookie_httponly', 1);
 session_name('varsession');
 session_start();
+header_remove("X-Powered-By");
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
