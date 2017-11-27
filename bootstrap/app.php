@@ -6,7 +6,7 @@
  * @link https://github.com/braian125/s3-skeleton
  */
 ini_set('session.cookie_httponly', 1);
-session_name('varsession');
+session_name('app_session');
 session_start();
 header_remove("X-Powered-By");
 require_once __DIR__ . '/../vendor/autoload.php';
