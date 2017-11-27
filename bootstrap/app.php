@@ -1,4 +1,10 @@
 <?php
+/**
+ * Bootstrap file
+ *
+ * @author Brian Vanegas Parra @braian125
+ * @link https://github.com/braian125/s3-skeleton
+ */
 ini_set('session.cookie_httponly', 1);
 session_name('varsession');
 session_start();
