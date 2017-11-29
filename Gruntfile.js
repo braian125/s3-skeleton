@@ -60,7 +60,7 @@ module.exports = function (grunt) {
         options: {
           livereload: {
             host: 'localhost',
-            port: 8080, // Change this for your port
+            port: 8090, // Change this for your port
           }
         },
         sass: {
