@@ -22,8 +22,8 @@
         "illuminate/database" : "5.4.36",
         "davedevelopment/phpmig": "^1.2",
         "symfony/process": "^3.0",
-        "cboden/ratchet": "^0.4.0"
-        "vlucas/phpdotenv": "^2.4",        
+        "cboden/ratchet": "^0.4.0",
+        "vlucas/phpdotenv": "^2.4"        
     },
     "autoload": {
         "psr-4": {
