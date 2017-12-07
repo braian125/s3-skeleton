@@ -45,6 +45,10 @@ $container['auth'] = function($container){
 	return new \App\Auth\Auth;
 };
 
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages();
+};
+
 $container['csrf'] = function ($c) {
     return new \Slim\Csrf\Guard;
 };
@@ -70,7 +74,9 @@ $container['view'] = function ($container) {
 			'check'	=> $container->auth->check(),
 			'user'	=> $container->auth->user(),
 		]);	
-	}	
+	}
+
+	$view->getEnvironment()->addGlobal('flash', $container->flash);
 	return $view;
 };
 
