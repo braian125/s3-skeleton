@@ -23,7 +23,7 @@ class User extends Migration
             array(
                 'username'  => 'admin',
                 'email'     => 'admin@slim.dev',
-                'password'  => '$2y$10$ElXh/aFKLN1Vf4t2G0DTnupWcEpS2/2OP8fIsQXjHp7KXE3bjcUke',
+                'password'  => password_hash('admin123',PASSWORD_DEFAULT),
                 'group_id'  => '1',
                 'status'    => '1'
             ),

@@ -4,7 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Sign In</title>
 </head>
-<body>
+<body>	
+	{% if dotenv %}
+		<div class="notification">
+			<h4>Environment Variables no settings</h4>			
+		</div>
+	{% endif %}
 	<form action="auth" id="frmSignin" method="POST">
 		{{ csrf_field() | raw }}
 		<h1>Signin</h1>

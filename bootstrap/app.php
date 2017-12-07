@@ -11,8 +11,20 @@ session_start();
 header_remove("X-Powered-By");
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
-$dotenv->load();
+if(file_exists( __DIR__ . '/../.env' )){	
+	$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+	$dotenv->load();	
+}else{
+	$dotenvSettings = "";
+	$_ENV['APP_TWIGDEBUG'] = "true";
+	$_ENV['APP_DISPLAYERRORDETAILS'] = "true";
+	$_ENV['DB_CONNECTION'] = "mysql";
+	$_ENV['DB_HOST'] = "localhost";
+	$_ENV['DB_DATABASE'] = "database";
+	$_ENV['DB_USERNAME'] = "root";
+	$_ENV['DB_PASSWORD'] = "";
+	$_ENV['DB_PREFIX'] = "";
+}
 
 $app = new Slim\App([
     'settings' => [
@@ -40,6 +52,8 @@ $capsule->bootEloquent();
 $container['db'] = function($container) use($capsule) {
 	return $capsule;
 };
+
+(isset($dotenvSettings)) ? $container['dotenv'] = $dotenvSettings : '';
 
 $container['auth'] = function($container){
 	return new \App\Auth\Auth;
@@ -76,7 +90,8 @@ $container['view'] = function ($container) {
 		]);	
 	}
 
-	$view->getEnvironment()->addGlobal('flash', $container->flash);
+	$view->getEnvironment()->addGlobal('flash', $container->flash);		
+	(isset($container['dotenv'])) ? $view->getEnvironment()->addGlobal('dotenv','true') : '';
 	return $view;
 };
 
