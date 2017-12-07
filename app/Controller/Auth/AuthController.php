@@ -5,9 +5,9 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-	public function signin($request, $response)	
-	{		
-		return $this->view->render($response, 'auth/layout.twig');		
+	public function signin($request, $response)
+	{
+		return $this->view->render($response, 'auth/layout.twig');
 	}
 
 	public function postSignin($request, $response)
@@ -20,7 +20,8 @@ class AuthController extends Controller
 		if($auth){
 			return $response->withRedirect($this->router->pathFor('home'));
 		}else{
+			$this->flash->addMessage('error','Login failed; Invalid user or password');			
 			return $response->withRedirect($this->router->pathFor('signin'));
-		}	
+		}
 	}
 }

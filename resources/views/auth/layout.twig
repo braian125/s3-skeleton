@@ -20,6 +20,11 @@
 			<div class="col-md-12">
 				<button type="submit">Sing In</button>
 			</div>
+			{% if flash.getMessages('error') %}
+				<div class="authFailed">
+					{{ flash.getMessage('error') | first }}
+				</div>
+			{% endif %}
 		</div>
 	</form>
 </body>
