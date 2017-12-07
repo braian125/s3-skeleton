@@ -4,19 +4,21 @@ Welcome to S3 Skeleton!
 Install
 -------------
 
-**Github**
->git clone https://github.com/braian125/s3-skeleton.git
-
 **Using Composer**
 >composer create-project gosoft/s3-skeleton=dev-master
 
-<i class="icon-file"></i> Run it
+**Github**
+>git clone https://github.com/braian125/s3-skeleton.git
+
+Run it
 -------------
 
->1. `run composer install`
->2. `run npm i, on linux run with sudo`
->3. `run npm install -g grunt, on linux run with sudo`
->4. `Copy the .env.example file and rename it as .env, in the file configure your development environment variables`
+>**1**. run composer install
+>**2**. run npm i, on linux run with sudo (optional)
+>**3**. run npm install -g grunt, on linux run with sudo (optional)
+>**4**. Copy the .env.example file and rename it as .env, in the file configure your development environment variables
+>**5**. Serving your application using built-in PHP development server: **php -S localhost:8080 -t public**
+
 
 Direcotories
 ------------
