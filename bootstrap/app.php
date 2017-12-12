@@ -11,7 +11,7 @@ session_start();
 header_remove("X-Powered-By");
 require_once __DIR__ . '/../vendor/autoload.php';
 
-if(file_exists( __DIR__ . '/../.env' )){	
+if(file_exists( __DIR__ . '/../.env' )){
 	$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
 	$dotenv->load();	
 }else{
@@ -80,9 +80,13 @@ $container['view'] = function ($container) {
 		$basePath,
 		$container->request->getUri()
 	));
+
+	$view->addExtension( new \App\Views\cssBusterExtension('/../../public/busters.json'));
+	$view->addExtension( new \App\Views\jsBusterExtension('/../../public/busters.json'));
 	$view->addExtension( new App\Views\CsrfExtension($container['csrf']));
 	$view->addExtension(new \Twig_Extension_Debug());
 	$view['baseUrl'] = $basePath;
+	
 	if(isset($_SESSION['user'])){
 		$view->getEnvironment()->addGlobal('auth', [
 			'check'	=> $container->auth->check(),

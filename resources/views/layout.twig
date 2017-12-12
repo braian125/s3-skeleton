@@ -6,8 +6,11 @@
         <link href="assets/css/style.min.css?v=1505928328063" rel="stylesheet" type="text/css">
         <link href="assets/css/main.min.css?v=1505928328063" rel="stylesheet" type="text/css">
         <link href="assets/css/other/main.min.css?v=1505928328063" rel="stylesheet" type="text/css">
+        {% if cssBundle() %}
+            <link rel="stylesheet" href="{{ baseUrl ~ '/' ~ cssBundle() | raw }}" rel="stylesheet" type="text/css">        
+        {% endif %}
     </head>
-    <body>
+    <body>        
         <!-- content -->
         <div class="content">
             <div>
@@ -21,5 +24,8 @@
         <script src="assets/js/chat/chat.min.js?v=1505928328063"></script>
         <script src="assets/js/info.min.js?v=1505928328063"></script>
         <script src="//localhost:8090/livereload.js"></script> {# DONT REMOVE, this is for livereload, only change your port #}
+        {% if jsBundle() %}
+            <script src="{{ baseUrl ~ '/' ~ jsBundle() | raw }}"></script>
+        {% endif %}
     </body>
 </html>
