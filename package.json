@@ -21,6 +21,6 @@
     "matchdep": "*"
   },
   "dependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^1.0.3"
   }
 }
