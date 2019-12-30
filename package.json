@@ -15,7 +15,7 @@
     "grunt-contrib-watch": "*",
     "grunt-cssc": "*",
     "grunt-file-hash": "*",
-    "grunt-htmlhint": "*",
+    "grunt-htmlhint": "^0.9.13",
     "grunt-processhtml": "*",
     "grunt-writefile": "*",
     "matchdep": "*"
