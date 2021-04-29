@@ -19,7 +19,7 @@
         "slim/twig-view": "*",
         "slim/flash": "^0.4",
         "slim/csrf": "^0.8.2",
-        "illuminate/database" : "5.4.36",
+        "illuminate/database" : "6.20.26",
         "davedevelopment/phpmig": "^1.2",
         "symfony/process": "^3.0",
         "cboden/ratchet": "^0.4.0",
